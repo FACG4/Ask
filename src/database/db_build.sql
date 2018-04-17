@@ -10,14 +10,16 @@ CREATE TABLE users(
 CREATE TABLE questions(
   id SERIAL PRIMARY KEY,
   body TEXT,
-  user_id INTEGER REFERENCES users (id)
+  user_id INTEGER REFERENCES users (id),
+  deleted BOOLEAN
 );
 
 
 CREATE TABLE answers (
   id SERIAL PRIMARY KEY,
   body TEXT,
-  question_id INTEGER REFERENCES questions (id)
+  question_id INTEGER REFERENCES questions (id),
+  deleted BOOLEAN
 );
 
 

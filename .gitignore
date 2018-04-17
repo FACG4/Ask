@@ -59,4 +59,6 @@ typings/
 
 config.env
 
+.config.env
+
 node_modules
