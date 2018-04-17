@@ -1,24 +1,16 @@
-const fs = require('fs');
+const dbConnection = require("./db_connection");
+const fs = require("fs");
 
-const dbConnection = require('./db_connection.js');
+const sql = fs.readFileSync(`${__dirname}/bd_build.sql`).toString();
 
-const sql = fs.readFileSync(`${__dirname}/db_build.sql`).toString();
-
-
-
-
-const runDbBuild = cb => {
+const dbBuild = cp => {
   dbConnection.query(sql, (err, res) => {
-    if (err) return cb(err);
-    cb(null, res);
+    if (err) {
+      cb(err);
+      console.log("errrrrrrrrr");
+    } else {
+      console.log("superheroes database has been initialzed with: ", res);
+      cb(null, res);
+    }
   });
 };
-
-
-
-
-
-
-
-
-module.exports = runDbBuild;
