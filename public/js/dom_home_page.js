@@ -9,7 +9,7 @@ const fetch = (url, callback) => {
   };
   xhr.open("GET", url, true);
   xhr.send();
-}
+};
 
 const getUserInfo = (err, data) => {
   if (err) {
@@ -17,32 +17,28 @@ const getUserInfo = (err, data) => {
   } else {
     const selectSql = JSON.parse(data);
     console.log(selectSql);
-    selectSql.forEach((info) => {
-
-      const row = document.createElement('section');
-      row.setAttribute('class', 'row');
-      const questionLabel = document.createElement('label');
-      questionLabel.setAttribute('class', 'quesLab');
-      const answerLabel = document.createElement('label');
-      answerLabel.setAttribute('class', 'ansLab');
-      const userNamelink = document.createElement('a');
-      userNamelink.setAttribute('class', 'nameLink');
-      userNamelink.setAttribute('href', "/user/" + info.id);
-
+    selectSql.forEach(info => {
+      const row = document.createElement("section");
+      row.setAttribute("class", "row");
+      const questionLabel = document.createElement("label");
+      questionLabel.setAttribute("class", "quesLab");
+      const answerLabel = document.createElement("label");
+      answerLabel.setAttribute("class", "ansLab");
+      const userNamelink = document.createElement("a");
+      userNamelink.setAttribute("class", "nameLink");
+      userNamelink.setAttribute("href", "/user/" + info.id);
 
       questionLabel.textContent = info.question;
       answerLabel.textContent = info.answer;
       userNamelink.textContent = info.name;
 
-
-      document.getElementById('bodyid').appendChild(row);
+      document.getElementById("bodyid").appendChild(row);
       row.appendChild(userNamelink);
       row.appendChild(questionLabel);
       row.appendChild(answerLabel);
-
     });
-
   }
-}
-
-fetch('/select', getUserInfo);
+};
+window.onload = function() {
+  fetch("/select", getUserInfo);
+};

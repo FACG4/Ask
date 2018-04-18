@@ -19,5 +19,6 @@ We created this web page to apply what we have studied during this week. So this
 
 ###### The following image represents the flow that we followed during our work on this project. We divided the work between two pairs(Ahmed & Abdullah) and (Sallam & Balsam).
 
-![flow project](public/img/project flow.png)
-&nbsp;
+
+![flow project](public/img/projectflow.png)
+ 
