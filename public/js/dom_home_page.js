@@ -20,37 +20,25 @@ const getUserInfo = (err, data) => {
     selectSql.forEach((info) => {
 
       const row = document.createElement('section');
-      row.setAttribute('id', 'row');
+      row.setAttribute('class', 'row');
       const questionLabel = document.createElement('label');
-      questionLabel.setAttribute('id', 'quesLab');
+      questionLabel.setAttribute('class', 'quesLab');
       const answerLabel = document.createElement('label');
-      answerLabel.setAttribute('id', 'ansLab');
-      // const btnUserName = document.createElement('button');
+      answerLabel.setAttribute('class', 'ansLab');
       const userNamelink = document.createElement('a');
-      userNamelink.setAttribute('id', 'name');
-      userNamelink.setAttribute('href', "/user/" +info.id);
+      userNamelink.setAttribute('class', 'nameLink');
+      userNamelink.setAttribute('href', "/user/" + info.id);
+
+
+      questionLabel.textContent = info.question;
+      answerLabel.textContent = info.answer;
       userNamelink.textContent = info.name;
 
 
-
-      const br = document.createElement('br');
-      questionLabel.textContent = info.question;
-      answerLabel.textContent = info.answer;
-
-      // btnUserName.addEventListener('click', (e) => {
-      //   const userData = [{
-      //     id: info.id,
-      //     name: info.name
-      //   }];
-      //   localStorage.setItem( 'objectToPass', JSON.stringify(userData) );
-      //   location.href = "../html/dom_user_page.html" ;
-      // });
-
       document.getElementById('bodyid').appendChild(row);
+      row.appendChild(userNamelink);
       row.appendChild(questionLabel);
       row.appendChild(answerLabel);
-      row.appendChild(userNamelink);
-      row.appendChild(br);
 
     });
 
