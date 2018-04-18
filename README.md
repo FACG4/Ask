@@ -1,5 +1,6 @@
 # Ask :sparkles:
- By:&nbsp;&nbsp;&nbsp; Ahmed:small_orange_diamond:Sallam:small_orange_diamond:Balsam:small_orange_diamond:Abdullah    </b>
+ By:&nbsp;&nbsp;&nbsp;
+  Abdullah:small_orange_diamond:Ahmed:small_orange_diamond:Balsam:small_orange_diamond:Sallam    </b>
 ![This is image](https://i.kinja-img.com/gawker-media/image/upload/s--w8AP4uAQ--/c_fill,fl_progressive,g_center,h_450,q_80,w_800/ihsllhptnnm4vb7wuvgq.jpg) </br>
 To see the webpages, [CLICK HERE](https://ask-app-saba.herokuapp.com/)
 ### WHY :question:
@@ -12,3 +13,7 @@ We created this web page to apply what we have studied during this week. So this
 * Funally, we added some simple style.
 
 ![flow project](public/img/project flow.png)
+&nbsp;
+
+
+The following image represents the flow that we followed during our work on this project. We divided the work between two pairs(Ahmed & Abdullah) and (Sallam & Balsam).
