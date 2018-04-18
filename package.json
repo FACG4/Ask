@@ -6,11 +6,11 @@
   "directories": {
     "test": "tests"
   },
+
   "dependencies": {
     "env2": "^2.2.0",
     "pg": "^7.4.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dbBuild": "node src/database/db_build.js",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/FACG4/Ask/issues"
   },
-  "homepage": "https://github.com/FACG4/Ask#readme"
-}
+  "homepage": "https://github.com/FACG4/Ask#readme",
+  "dependencies": {
+    "env2": "^2.2.0",
+    "pg": "^7.4.1"
+  }
