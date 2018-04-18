@@ -3,9 +3,9 @@ const path = require("path");
 const postData = require("./queries/postData");
 const getData = require("./queries/getData");
 const queryString = require("querystring");
+const http=require('http');
 const router = (req, response) => {
   const endpoint = req.url;
-console.log(endpoint);
 
   if (endpoint === "/") {
     fs.readFile(
@@ -93,7 +93,6 @@ console.log(endpoint);
       }
     });
   } else if (endpoint.split("/")[1] === "selectUser") {
-    console.log("res");
     let id = endpoint.split("/")[2];
     getData.getUserData(id, (err, res) => {
       if (err) {
@@ -115,8 +114,9 @@ console.log(endpoint);
     });
     req.on("end", () => {
       let data = queryString.parse(body);
-      postData.askQuestion(data, (err, res) => {
-        // console.log(res);
+      postData.askQuestion(data, (err, res) => {        
+        response.writeHead(302, {"location":`/user/${data.user_id}`});
+        response.end();
       });
     });
   } else if (endpoint === "/reply") {
@@ -127,7 +127,8 @@ console.log(endpoint);
     req.on("end", () => {
       let data = queryString.parse(body);
       postData.reply(data, (err, res) => {
-        console.log(data);
+        response.writeHead(302, {"location":`/`});
+        response.end();
       });
     });
   }
