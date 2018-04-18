@@ -1,13 +1,17 @@
-const dbConnections= require('./../database/db_connection');
+const dbConnections = require('./../database/db_connection');
 
-const getUserData=(user_id,cb)=>{
-    dbConnections.query(`select questions.body as questionBody ,answers.body  as answerBody from questions inner join answers on questions.id=answers.question_id where questions.user_id=${user_id}`,(err,res)=>{
-        if(err) cb(err);
-        else{
-            cb(null,res.rows);
-        }
-    });
-
+const getUserData = (cb ,user_id) => {
+  const sql = {
+    text : 'SELECT questions.body as questionBody ,answers.body  AS answerBody FROM questions LEFT JOIN answers ON questions.id=answers.question_id WHERE questions.user_id=$1',
+    values : [user_id]
+  };
+  dbConnections.query(sql, (err, res) => {
+    if (err) {
+       cb(err);
+    } else {
+      cb(null, res.rows);
+    }
+  });
 }
 
 const getData = cb => {
@@ -19,7 +23,8 @@ const getData = cb => {
     }
   });
 };
-module.exports={getUserData,getData};
 
-
-
+module.exports = {
+  getUserData,
+  getData
+};

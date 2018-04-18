@@ -44,5 +44,6 @@ const getUserInfo = (err, data) => {
 
   }
 }
-
-fetch('/select', getUserInfo);
+window.onload = function () {
+  fetch('/select', getUserInfo);
+ }
