@@ -6,13 +6,13 @@
   "directories": {
     "test": "tests"
   },
-
   "dependencies": {
     "env2": "^2.2.0",
     "pg": "^7.4.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "cover": "istanbul cover tests/server.js | tap-spec ",
+    "test": "tape tests/server.js | tap-spec ",
     "dbBuild": "node src/database/db_build.js",
     "start": "node src/server.js"
   },
@@ -26,7 +26,9 @@
     "url": "https://github.com/FACG4/Ask/issues"
   },
   "homepage": "https://github.com/FACG4/Ask#readme",
-  "dependencies": {
-    "env2": "^2.2.0",
-    "pg": "^7.4.1"
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
   }
+}
