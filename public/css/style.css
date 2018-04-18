@@ -1,4 +1,27 @@
-.title{
+.title {
   text-align: center;
   color: #471677;
+}
+
+#row {
+  margin: 0 auto;
+  border: solid 1px;
+  /* display: flex;
+  justify-content: center; */
+}
+
+#quesLab {
+  display: block;
+}
+
+#ansLab {
+  display: block;
+}
+
+#btnName {
+  /* float: right; */
+  background-color: #471677;
+  color: white;
+  width: 80px;
+  height: 30px;
 }
