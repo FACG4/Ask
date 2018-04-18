@@ -11,4 +11,4 @@ We created this web page to apply what we have studied during this week. So this
 * Created html files to dislay the selected data, and allow users to post data to database.
 * Funally, we added some simple style.
 
-![flow project](public/img/project flow.png)
+![flow project](public/img/projectflow.png)
