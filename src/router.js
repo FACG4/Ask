@@ -125,7 +125,6 @@ const router = (req, response) => {
     req.on("end", () => {
       let data = queryString.parse(body);
       postData.reply(data, (err, res) => {
-        console.log(data);
       });
     });
   }
