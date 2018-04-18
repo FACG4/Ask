@@ -10,6 +10,7 @@ const fetch = (url, callback) => {
     xhr.open("GET", url, true);
     xhr.send();
   }
+
   const getUserInfo = (err, data) => {
     if (err) {
         throw new Error(err);
@@ -18,21 +19,23 @@ const fetch = (url, callback) => {
         selectSql.forEach(element => {
             const userInfo=document.getElementById('userInfo');
             const question= document.createElement('div');
-            question.setAttribute('class','question');
-            const questionUser= document.createElement('h2');
-            const answerUser= document.createElement('h3');
+            question.setAttribute('class','row');
+            const questionUser= document.createElement('label');
+            questionUser.setAttribute('class','quesLab');
+            const answerUser= document.createElement('label');
+            answerUser.setAttribute('class','ansLab');
+
             answerUser.textContent=element.answerbody;
             questionUser.textContent=element.questionbody;
+            
             const result=document.querySelector('#result');
             result.appendChild(question);
             question.appendChild(questionUser);
             question.appendChild(answerUser);
         });
- 
-       
       }
   }
-let id =window.location.href.split('/')[4];
-  
-fetch('/selectUser/'+id,getUserInfo)   ;
 
+let id =window.location.href.split('/')[4];
+
+fetch('/selectUser/'+id,getUserInfo)   ;
