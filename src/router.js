@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const getData = require('./queries/getData');
 const router = (req, response) => {
- 
+
   const endpoint = req.url;
   console.log(endpoint);
   if (endpoint === "/") {
@@ -82,7 +82,7 @@ const router = (req, response) => {
 
   }else if(endpoint.split('/')[1]==="selectUser"){
     let id =endpoint.split('/')[2];
-    getData.getUserData(id,(err,res)=>{
+    getData.getUserData((err,res)=>{
         if (err) {
             response.writeHead(500, 'Content-Type:text/html');
             response.end('<h1>Sorry, there was a problem getting the users</h1>');
@@ -94,11 +94,20 @@ const router = (req, response) => {
             });
             response.end(output);
           }
-    });
-    
-  
-    
+    },id);
+}else{
+  fs.readFile(path.join(__dirname, '..', 'public', 'html', 'error.html'), (err, file) => {
+    if (err) {
+      throw new Error(err);
+    } else {
+      response.writeHead(200, {
+        'Content-Type': 'text/html'
+      });
+      response.end(file);
+    }
+  });
 }
+
 }
 
 module.exports = router;

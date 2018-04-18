@@ -1,12 +1,13 @@
-const dbConnections= require('./../database/db_connection');
+const dbConnections = require('./../database/db_connection');
 
-const getUserData=(user_id,cb)=>{
-    dbConnections.query(`SELECT questions.body as questionBody ,answers.body  AS answerBody FROM questions INNER JOIN answers ON questions.id=answers.question_id where questions.user_id=${user_id}`,(err,res)=>{
-        if(err) cb(err);
-        else{
-            cb(null,res.rows);
-        }
-    });
+const getUserData = (cb ,user_id) => {
+  dbConnections.query(`SELECT questions.body as questionBody ,answers.body  AS answerBody FROM questions INNER JOIN answers ON questions.id=answers.question_id WHERE questions.user_id=${user_id}`, (err, res) => {
+    if (err) {
+       cb(err);
+    } else {
+      cb(null, res.rows);
+    }
+  });
 }
 
 const getData = cb => {
@@ -19,4 +20,7 @@ const getData = cb => {
   });
 };
 
-module.exports={getUserData,getData};
+module.exports = {
+  getUserData,
+  getData
+};
