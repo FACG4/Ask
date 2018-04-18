@@ -13,4 +13,4 @@ console.log("the process success");
 });
 };
 
-dbBuild();
+module.exports = dbBuild;
