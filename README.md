@@ -12,10 +12,13 @@ We created this web page to apply what we have studied during this week. So this
 * Created html files to dislay the selected data, and allow users to post data to database.
 * Funally, we added some simple style.
 
- 
+&nbsp;
+&nbsp;
+###### The following image represents the database that we use in our project:
+![flow project](/public/img/flow-chart.png)
 
+###### The following image represents the flow that we followed during our work on this project. We divided the work between two pairs(Ahmed & Abdullah) and (Sallam & Balsam).
 
-The following image represents the flow that we followed during our work on this project. We divided the work between two pairs(Ahmed & Abdullah) and (Sallam & Balsam).
 
 ![flow project](public/img/projectflow.png)
  
