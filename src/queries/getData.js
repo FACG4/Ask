@@ -1,7 +1,11 @@
 const dbConnections = require('./../database/db_connection');
 
 const getUserData = (cb ,user_id) => {
-  dbConnections.query(`SELECT questions.body as questionBody ,answers.body  AS answerBody FROM questions INNER JOIN answers ON questions.id=answers.question_id WHERE questions.user_id=${user_id}`, (err, res) => {
+  const sql = {
+    text : 'SELECT questions.body as questionBody ,answers.body  AS answerBody FROM questions LEFT JOIN answers ON questions.id=answers.question_id WHERE questions.user_id=$1',
+    values : [user_id]
+  };
+  dbConnections.query(sql, (err, res) => {
     if (err) {
        cb(err);
     } else {

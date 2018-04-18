@@ -27,7 +27,7 @@ const fetch = (url, callback) => {
 
             answerUser.textContent=element.answerbody;
             questionUser.textContent=element.questionbody;
-            
+
             const result=document.querySelector('#result');
             result.appendChild(question);
             question.appendChild(questionUser);

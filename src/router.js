@@ -4,7 +4,6 @@ const getData = require('./queries/getData');
 const router = (req, response) => {
 
   const endpoint = req.url;
-  console.log(endpoint);
   if (endpoint === "/") {
     fs.readFile(path.join(__dirname, '..', 'public', 'html', 'home_page.html'), (err, file) => {
       if (err) {
