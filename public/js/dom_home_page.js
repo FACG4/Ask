@@ -13,7 +13,7 @@ const fetch = (url, callback) => {
 
 const getUserInfo = (err, data) => {
   if (err) {
-    throw new Error(err);
+    throw new Error("hhhh", err);
   } else {
     const selectSql = JSON.parse(data);
     console.log(selectSql);
@@ -29,13 +29,13 @@ const getUserInfo = (err, data) => {
       const userNamelink = document.createElement('a');
       userNamelink.setAttribute('id', 'name');
       userNamelink.setAttribute('href', "/user/" +info.id);
-      userNamelink.textContent = info.name;
-
-
-
       const br = document.createElement('br');
+
+
+
       questionLabel.textContent = info.question;
       answerLabel.textContent = info.answer;
+      userNamelink.textContent = info.name;
 
       // btnUserName.addEventListener('click', (e) => {
       //   const userData = [{
@@ -56,5 +56,7 @@ const getUserInfo = (err, data) => {
 
   }
 }
-
-fetch('/select', getUserInfo);
+window.onload = function () {
+  console.log('hi');
+  fetch('/select', getUserInfo);
+ }

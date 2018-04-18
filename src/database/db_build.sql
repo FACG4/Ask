@@ -39,6 +39,7 @@ VALUES
 ('Do you like programming?' , 3),
 ('Do you like programming?' , 3),
 ('Do you like programming?' , 3),
+('Do you like programming?' , 3),
 ('Do you like dogs?' , 2);
 
 
