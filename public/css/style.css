@@ -47,3 +47,25 @@ body {
   color: #471677;
   text-decoration: none;
 }
+
+.nameLink:hover{
+  color: #f747c5;
+}
+
+.form{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.textarea{border-radius: 6px ;
+  border-color: #471677;
+padding: 10px;}
+
+.addQuestion{
+  background-color: #471677;
+  color: white;
+  height: 30px;
+  width: 278px;
+  border-radius: 6px;
+}
