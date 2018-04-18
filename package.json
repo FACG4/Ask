@@ -25,14 +25,10 @@
   "bugs": {
     "url": "https://github.com/FACG4/Ask/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/FACG4/Ask#readme"
-=======
   "homepage": "https://github.com/FACG4/Ask#readme",
   "devDependencies": {
     "istanbul": "^0.4.5",
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0"
   }
->>>>>>> 69b514c267f917e91cd0430ab63a812f859b0564
 }

@@ -4,11 +4,8 @@ const postData = require("./queries/postData");
 const getData = require("./queries/getData");
 const queryString = require("querystring");
 const router = (req, response) => {
-<<<<<<< HEAD
-=======
-
->>>>>>> 69b514c267f917e91cd0430ab63a812f859b0564
   const endpoint = req.url;
+
   if (endpoint === "/") {
     fs.readFile(
       path.join(__dirname, "..", "public", "html", "home_page.html"),
@@ -109,7 +106,6 @@ const router = (req, response) => {
         response.end(output);
       }
     });
-<<<<<<< HEAD
   } else if (endpoint === "/ask-question") {
     let body = "";
     req.on("data", data => {
@@ -134,37 +130,5 @@ const router = (req, response) => {
     });
   }
 };
-=======
-
-  }else if(endpoint.split('/')[1]==="selectUser"){
-    let id =endpoint.split('/')[2];
-    getData.getUserData((err,res)=>{
-        if (err) {
-            response.writeHead(500, 'Content-Type:text/html');
-            response.end('<h1>Sorry, there was a problem getting the users</h1>');
-            console.log(err);
-          } else {
-            let output = JSON.stringify(res);
-            response.writeHead(200, {
-              'content-type': 'application/json'
-            });
-            response.end(output);
-          }
-    },id);
-}else{
-  fs.readFile(path.join(__dirname, '..', 'public', 'html', 'error.html'), (err, file) => {
-    if (err) {
-      throw new Error(err);
-    } else {
-      response.writeHead(200, {
-        'Content-Type': 'text/html'
-      });
-      response.end(file);
-    }
-  });
-}
-
-}
->>>>>>> 69b514c267f917e91cd0430ab63a812f859b0564
 
 module.exports = router;
