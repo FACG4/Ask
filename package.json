@@ -6,7 +6,6 @@
   "directories": {
     "test": "tests"
   },
-
   "dependencies": {
     "env2": "^2.2.0",
     "pg": "^7.4.1"
@@ -25,8 +24,5 @@
   "bugs": {
     "url": "https://github.com/FACG4/Ask/issues"
   },
-  "homepage": "https://github.com/FACG4/Ask#readme",
-  "dependencies": {
-    "env2": "^2.2.0",
-    "pg": "^7.4.1"
-  }}
+  "homepage": "https://github.com/FACG4/Ask#readme"
+}

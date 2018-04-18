@@ -9,7 +9,7 @@ const fetch = (url, callback) => {
   };
   xhr.open("GET", url, true);
   xhr.send();
-}
+};
 
 const getUserInfo = (err, data) => {
   if (err) {
@@ -17,23 +17,20 @@ const getUserInfo = (err, data) => {
   } else {
     const selectSql = JSON.parse(data);
     console.log(selectSql);
-    selectSql.forEach((info) => {
-
-      const row = document.createElement('section');
-      row.setAttribute('id', 'row');
-      const questionLabel = document.createElement('label');
-      questionLabel.setAttribute('id', 'quesLab');
-      const answerLabel = document.createElement('label');
-      answerLabel.setAttribute('id', 'ansLab');
+    selectSql.forEach(info => {
+      const row = document.createElement("section");
+      row.setAttribute("id", "row");
+      const questionLabel = document.createElement("label");
+      questionLabel.setAttribute("id", "quesLab");
+      const answerLabel = document.createElement("label");
+      answerLabel.setAttribute("id", "ansLab");
       // const btnUserName = document.createElement('button');
-      const userNamelink = document.createElement('a');
-      userNamelink.setAttribute('id', 'name');
-      userNamelink.setAttribute('href', "/user/" +info.id);
+      const userNamelink = document.createElement("a");
+      userNamelink.setAttribute("id", "name");
+      userNamelink.setAttribute("href", "/user/" + info.id);
       userNamelink.textContent = info.name;
 
-
-
-      const br = document.createElement('br');
+      const br = document.createElement("br");
       questionLabel.textContent = info.question;
       answerLabel.textContent = info.answer;
 
@@ -46,15 +43,13 @@ const getUserInfo = (err, data) => {
       //   location.href = "../html/dom_user_page.html" ;
       // });
 
-      document.getElementById('bodyid').appendChild(row);
+      document.getElementById("bodyid").appendChild(row);
       row.appendChild(questionLabel);
       row.appendChild(answerLabel);
       row.appendChild(userNamelink);
       row.appendChild(br);
-
     });
-
   }
-}
+};
 
-fetch('/select', getUserInfo);
+fetch("/select", getUserInfo);
