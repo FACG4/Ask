@@ -108,3 +108,11 @@ padding: 10px;}
   width: 278px;
   border-radius: 6px;
 }
+.addQuestion2{
+  background-color: #471677;
+  color: white;
+  height: 30px;
+  width: 100px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
