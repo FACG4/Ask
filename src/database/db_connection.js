@@ -2,8 +2,10 @@ const { Pool } = require("pg");
 const url = require("url");
 require("env2")("./config.env");
 
+console.log(process.env.DB_URL);
+
 if (!process.env.DB_URL) {
-  throw new Error("errorororororor");
+  throw new Error("error");
 }
 
 const parms = url.parse(process.env.DB_URL);
