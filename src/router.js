@@ -3,6 +3,7 @@ const path = require("path");
 const postData = require("./queries/postData");
 const getData = require("./queries/getData");
 const queryString = require("querystring");
+const http=require('http');
 const router = (req, response) => {
   const endpoint = req.url;
 
@@ -81,8 +82,9 @@ const router = (req, response) => {
       if (err) {
         response.writeHead(500, "Content-Type:text/html");
         response.end("<h1>Sorry, there was a problem getting the users</h1>");
-        console.log(error);
-      } else {
+        console.log(err);
+        
+    } else {
         let output = JSON.stringify(res);
         response.writeHead(200, {
           "content-type": "application/json"
@@ -91,7 +93,6 @@ const router = (req, response) => {
       }
     });
   } else if (endpoint.split("/")[1] === "selectUser") {
-    console.log("res");
     let id = endpoint.split("/")[2];
     getData.getUserData(id, (err, res) => {
       if (err) {
@@ -113,8 +114,9 @@ const router = (req, response) => {
     });
     req.on("end", () => {
       let data = queryString.parse(body);
-      postData.askQuestion(data, (err, res) => {
-        // console.log(res);
+      postData.askQuestion(data, (err, res) => {        
+        response.writeHead(302, {"location":`/user/${data.user_id}`});
+        response.end();
       });
     });
   } else if (endpoint === "/reply") {
@@ -125,6 +127,8 @@ const router = (req, response) => {
     req.on("end", () => {
       let data = queryString.parse(body);
       postData.reply(data, (err, res) => {
+        response.writeHead(302, {"location":`/`});
+        response.end();
       });
     });
   }

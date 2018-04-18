@@ -16,7 +16,6 @@ const getUserInfo = (err, data) => {
     throw new Error(err);
   } else {
     const selectSql = JSON.parse(data);
-    console.log(selectSql);
     selectSql.forEach(info => {
       const row = document.createElement("section");
       row.setAttribute("class", "row");

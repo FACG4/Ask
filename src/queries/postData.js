@@ -1,7 +1,6 @@
 const dbConnections = require("../database/db_connection");
 
 const askQuestion = (question, cb) => {
-  console.log(question);
   dbConnections.query(
     {
       text: "insert into questions (body, user_id) values($1, $2)",
@@ -15,7 +14,6 @@ const askQuestion = (question, cb) => {
 };
 
 const reply = (reply, cb) => {
-  console.log(reply);
   dbConnections.query(
     {
       text: "insert into answers (body, question_id) values($1, $2)",

@@ -29,18 +29,13 @@ VALUES
 ('Abdullah'),
 ('Ahmed');
 
-INSERT INTO questions
-(body ,user_id)
-VALUES
-('What is your favorite color?' , 4),
-('How old are you?' , 1),
-('Do you like programming?' , 3),
-('Do you like programming?' , 3),
-('Do you like programming?' , 3),
-('Do you like programming?' , 3),
-('Do you like programming?' , 3),
-('Do you like programming?' , 3),
-('Do you like dogs?' , 2);
+  INSERT INTO questions
+  (body ,user_id)
+  VALUES
+  ('What is your favorite color?' , 4),
+  ('How old are you?' , 1),
+  ('Do you like programming?' , 3),
+  ('Do you like dogs?' , 2);
 
 
 INSERT INTO answers
@@ -49,11 +44,7 @@ VALUES
 ('Red' , 1),
 ('12' , 2),
 ('No' , 3),
-('No' , 3),
-('No' , 3),
-('No' , 3),
-(null , 7),
-('Yes I do :)' , 8);
+('Yes I do', 8);
 
 
 COMMIT;
