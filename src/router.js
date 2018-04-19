@@ -83,7 +83,7 @@ const router = (req, response) => {
         response.writeHead(500, "Content-Type:text/html");
         response.end("<h1>Sorry, there was a problem getting the users</h1>");
         console.log(err);
-        
+
     } else {
         let output = JSON.stringify(res);
         response.writeHead(200, {
@@ -114,7 +114,7 @@ const router = (req, response) => {
     });
     req.on("end", () => {
       let data = queryString.parse(body);
-      postData.askQuestion(data, (err, res) => {        
+      postData.askQuestion(data, (err, res) => {
         response.writeHead(302, {"location":`/user/${data.user_id}`});
         response.end();
       });
@@ -131,6 +131,20 @@ const router = (req, response) => {
         response.end();
       });
     });
+  }else {
+    fs.readFile(
+      path.join(__dirname, "..", "public", "html", "error.html"),
+      (err, file) => {
+        if (err) {
+          throw new Error(err);
+        } else {
+          response.writeHead(200, {
+            "Content-Type": "text/html"
+          });
+          response.end(file);
+        }
+      }
+    );
   }
 };
 

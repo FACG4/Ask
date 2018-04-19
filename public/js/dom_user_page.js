@@ -47,6 +47,7 @@ const getUserInfo = (err, data) => {
         replyArea.setAttribute("name", "reply");
         replyArea.setAttribute("placeholder", "add answer");
         replyArea.setAttribute("class", "textarea");
+        replyArea.setAttribute("required", "");
         const replyButton = document.createElement("button");
         replyButton.setAttribute("class", "addQuestion2");
         replyButton.setAttribute("type", "submit");

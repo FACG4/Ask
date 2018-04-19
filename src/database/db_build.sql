@@ -44,7 +44,7 @@ VALUES
 ('Red' , 1),
 ('12' , 2),
 ('No' , 3),
-('Yes I do', 8);
+('Yes I do', 4);
 
 
 COMMIT;
