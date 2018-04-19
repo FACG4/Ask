@@ -5,7 +5,7 @@ const fetch = (url, callback) => {
      if (xhr.status === 200) {
       callback(null, xhr.responseText);
     }else{
-      callback("Error" + xhr.responseText);
+      callback("Error" + xhr.responseText)
     }
   }
 
@@ -19,7 +19,6 @@ const getUserInfo = (err, data) => {
     throw new Error(err);
   } else {
     const selectSql = JSON.parse(data);
-    console.log(selectSql);
     selectSql.forEach(info => {
       const row = document.createElement("section");
       row.setAttribute("class", "row");
