@@ -1,13 +1,16 @@
 const fetch = (url, callback) => {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4 && xhr.status === 200) {
+    if (xhr.readyState === 4) {
+     if (xhr.status === 200) {
       callback(null, xhr.responseText);
-    } else {
-      callback("error" + xhr.responseType);
+    }else{
+      callback("Error" + xhr.responseText);
     }
-  };
-  xhr.open("GET", url, true);
+  }
+
+};
+  xhr.open("GET", url);
   xhr.send();
 };
 
@@ -16,6 +19,7 @@ const getUserInfo = (err, data) => {
     throw new Error(err);
   } else {
     const selectSql = JSON.parse(data);
+    console.log(selectSql);
     selectSql.forEach(info => {
       const row = document.createElement("section");
       row.setAttribute("class", "row");
@@ -38,6 +42,5 @@ const getUserInfo = (err, data) => {
     });
   }
 };
-window.onload = function() {
+
   fetch("/select", getUserInfo);
-};
